@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What's New & Documentation &bull; PowerX Keys</title>
+    <meta name="description" content="Release notes, changelog, and documentation for PowerX Keys.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .doc-hero {
+            text-align: center;
+            padding: 6rem 2rem 3rem 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .doc-title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(to right, #9D00FF, #ffffff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .doc-content-section {
+            max-width: 800px;
+            margin: 0 auto 3rem auto;
+            background: #0a0a0a;
+            border: 1px solid #1a1a1a;
+            padding: 3rem;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .doc-content-section h2 {
+            font-size: 1.8rem;
+            margin-top: 0;
+            color: #fff;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            border-bottom: 1px solid #1a1a1a;
+            padding-bottom: 1rem;
+        }
+
+        .doc-content-section h3 {
+            font-size: 1.3rem;
+            color: #e0e0e0;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .doc-content-section p,
+        .doc-content-section li {
+            line-height: 1.8;
+            color: #a0a0a0;
+            font-size: 1.05rem;
+        }
+
+        .doc-content-section ul {
+            padding-left: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .doc-content-section li {
+            margin-bottom: 0.75rem;
+        }
+
+        .version-badge {
+            display: inline-block;
+            background: rgba(157, 0, 255, 0.15);
+            color: #b233ff;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            border: 1px solid rgba(157, 0, 255, 0.3);
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 2rem;
+            color: #9D00FF;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.2s ease;
+        }
+
+        .back-link:hover {
+            color: #b233ff;
+            text-decoration: underline;
+        }
+
+        .nav-header {
+            padding: 2rem 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .feature-highlight {
+            color: #00e5ff;
+            font-weight: 600;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="nav-header">
+        <a href="index.html" class="back-link">&larr; Back to Home</a>
+    </header>
+
+    <div class="doc-hero">
+        <span class="version-badge">Version 1.0</span>
+        <h1 class="doc-title">What's New</h1>
+        <p class="section-subtitle" style="margin-bottom: 0;">Release notes and quick start guide for PowerX Keys.</p>
+    </div>
+
+    <!-- Quick Start Guide -->
+    <div class="doc-content-section" style="margin-top: 2rem;">
+        <h2 style="color: #fff;">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#9D00FF" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+                <line x1="12" y1="17" x2="12.01" y2="17"></line>
+            </svg>
+            Quick Start Guide
+        </h2>
+        <p>Getting started is incredibly simple:</p>
+        <ol style="margin-top: 1rem; padding-left: 1.5rem; color: #a0a0a0;">
+            <li style="margin-bottom: 0.75rem;">Launch <code>PowerX Keys.exe</code>.</li>
+            <li style="margin-bottom: 0.75rem;">Navigate to the <strong>Manage</strong> tab on the left sidebar.</li>
+            <li style="margin-bottom: 0.75rem;">Click on any existing hotkey card, or use the menu to add a new
+                customized shortcut.</li>
+            <li style="margin-bottom: 0.75rem;">Ensure the master toggle in the top-left is green and says "ACTIVE".
+            </li>
+        </ol>
+    </div>
+
+    <div class="doc-content-section">
+        <h2>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#9D00FF" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 20v-6M6 20V10M18 20V4"></path>
+            </svg>
+            What's New in Version 1.0
+        </h2>
+        <p>
+            Welcome to the first official release of PowerX Keys! This application was built from the ground up to
+            provide the fastest, most reliable hotkey automation experience for Windows professionals.
+        </p>
+
+        <h3>Core Engine & Performance</h3>
+        <ul>
+            <li><span class="feature-highlight">Zero Delay Execution:</span> Custom native engine integration ensures
+                key presses are registered and executed at the hardware level instantly.</li>
+            <li><span class="feature-highlight">Standalone Executable:</span> Fully packaged into a single lightweight
+                <code>.exe</code> file for immediate use.
+            </li>
+            <li><span class="feature-highlight">Memory Optimized:</span> Background engine uses virtually zero CPU and
+                minimal RAM, even with complex setups.</li>
+        </ul>
+
+        <h3>Application Management</h3>
+        <ul>
+            <li><span class="feature-highlight">Per Browser Filters:</span> Map hotkeys to trigger selectively across
+                Chrome, Edge, Brave, and Firefox.</li>
+            <li><span class="feature-highlight">Global Overrides:</span> Choose whether a hotkey runs everywhere or only
+                in specific applications.</li>
+            <li><span class="feature-highlight">Portable Configuration:</span> Settings are automatically isolated to
+                the AppData layer for permanent persistence.</li>
+        </ul>
+
+        <h3>Professional Features</h3>
+        <ul>
+            <li><span class="feature-highlight">High Performance Media Controls:</span> Native system commands for
+                Volume (Esc + Up/Down) and advanced playback.</li>
+            <li><span class="feature-highlight">Smart Tab Switching:</span> Optimized browser tab switching logic for
+                maximum navigation speed.</li>
+            <li><span class="feature-highlight">Instant Capture UI:</span> Assign keys by physically pressing them in
+                the dashboard. No manual entry required.</li>
+        </ul>
+    </div>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-content">
+            <span class="footer-app-name">PowerX Keys</span>
+            <span class="footer-version">v1.0</span>
+        </div>
+        <div class="footer-links">
+            <a href="support.html" class="footer-link">About & Donate</a>
+            <span style="color: #444; margin: 0 0.5rem;">•</span>
+            <a href="https://github.com/maazvfx/PowerXKeys" class="footer-link" target="_blank">GitHub Repository</a>
+        </div>
+        <div class="footer-copyright">
+            &copy; 2026 PowerX Keys. All rights reserved. Built for Windows 10/11.
+        </div>
+    </footer>
+</body>
+
+</html>

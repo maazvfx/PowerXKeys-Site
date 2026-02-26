@@ -1,0 +1,44 @@
+# PowerX Keys - Website Update Guide (What's New Section)
+
+When you release a new version of PowerX Keys, follow these steps to update the "whats-new.html" page.
+
+### 1. The HTML Structure
+Each version is contained within an `.accordion-item` div. To add a NEW version, copy the template below and paste it at the TOP of the `<div class="version-accordion">` container.
+
+### 2. The Template (Paste at the top of the accordion)
+```html
+<!-- Version [NUMBER] -->
+<div class="accordion-item active"> <!-- Add 'active' class to keep it open by default -->
+    <div class="accordion-header">
+        <h2>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#9D00FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 20v-6M6 20V10M18 20V4"></path>
+            </svg>
+            Version [NUMBER]
+        </h2>
+        <div class="chevron">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+        </div>
+    </div>
+    <div class="accordion-content">
+        <p>[BRIEF OVERVIEW OF THE RELEASE]</p>
+        
+        <h3>[CATEGORY NAME, e.g., UI Improvements]</h3>
+        <ul>
+            <li><span class="feature-highlight">[KEYWORD]:</span> [DESCRIPTION OF CHANGE]</li>
+            <li><span class="feature-highlight">[KEYWORD]:</span> [DESCRIPTION OF CHANGE]</li>
+        </ul>
+    </div>
+</div>
+```
+
+### 3. Important Tips
+- **The 'active' Class**: Only the newest version should have the `active` class in the HTML. Remove `active` from the previous version so it stays collapsed when the page loads.
+- **Icons**: You can swap the SVG icon in the `<h2>` tag for different versions if you want them to look unique (e.g., a "bolt" for performance updates, a "user" for UI updates).
+- **Badge**: If you want to show a "Coming Soon" or "New" badge next to the title, use:
+  `<span class="dummy-badge">NEW</span>` right after the Version number inside the `<h2>`.
+
+### 4. Updating the Hero Badge
+At the top of the page (line ~121), don't forget to update the version number shown in the small purple badge if you want the "Hero" section to reflect the latest release!
