@@ -4,209 +4,344 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>What's New & Documentation &bull; PowerX Keys</title>
-    <meta name="description" content="Release notes, changelog, and documentation for PowerX Keys.">
+    <title>What's New &bull; PowerX Keys</title>
+    <meta name="description" content="See what's new in PowerX Keys v5.3.0. Mobile remote control, redesigned timeline, smart view optimization, and more.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style_v2.css">
     <link rel="icon" type="image/png" href="assets/AppLogo.png">
-    <link rel="shortcut icon" type="image/png" href="assets/AppLogo.png">
+    <link rel="canonical" href="https://powerxkeys.com/whatsnew.html">
+
+    <meta property="og:url" content="https://powerxkeys.com/whatsnew.html">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="What's New &bull; PowerX Keys">
+    <meta property="og:description" content="See what's new in PowerX Keys v5.3.0. Mobile remote control, redesigned timeline, smart view optimization, and more.">
+    <meta property="og:image" content="https://powerxkeys.com/assets/AppLogo.png">
+    <meta property="twitter:card" content="summary_large_image">
     <style>
-        .doc-hero {
+        .changelog-hero {
             text-align: center;
-            padding: 6rem 2rem 3rem 2rem;
-            max-width: 800px;
+            padding: 6rem 2rem 2rem;
+            max-width: 700px;
             margin: 0 auto;
         }
 
-        .doc-title {
-            font-size: 3.5rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            background: linear-gradient(to right, #9D00FF, #ffffff);
+        .changelog-hero h1 {
+            font-size: 3.2rem;
+            font-weight: 800;
+            letter-spacing: -0.04em;
+            background: linear-gradient(to bottom right, #ffffff, #c0c0c0);
             -webkit-background-clip: text;
-            background-clip: text;
             -webkit-text-fill-color: transparent;
-        }
-
-        .doc-content-section {
-            max-width: 800px;
-            margin: 0 auto 3rem auto;
-            background: #0a0a0a;
-            border: 1px solid #1a1a1a;
-            padding: 3rem;
-            border-radius: 16px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-        }
-
-        .doc-content-section h2 {
-            font-size: 1.8rem;
-            margin-top: 0;
-            color: #fff;
-            margin-bottom: 1.5rem;
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            border-bottom: 1px solid #1a1a1a;
-            padding-bottom: 1rem;
-        }
-
-        .doc-content-section h3 {
-            font-size: 1.3rem;
-            color: #e0e0e0;
-            margin-top: 2rem;
-            margin-bottom: 1rem;
-        }
-
-        .doc-content-section p,
-        .doc-content-section li {
-            line-height: 1.8;
-            color: #a0a0a0;
-            font-size: 1.05rem;
-        }
-
-        .doc-content-section ul {
-            padding-left: 1.5rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .doc-content-section li {
             margin-bottom: 0.75rem;
         }
 
+        .changelog-hero p {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            line-height: 1.7;
+        }
+
         .version-badge {
-            display: inline-block;
-            background: rgba(157, 0, 255, 0.15);
-            color: #b233ff;
-            padding: 0.25rem 0.75rem;
-            border-radius: 20px;
-            font-size: 0.9rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            padding: 0.4rem 1rem;
+            border-radius: 100px;
+            font-size: 0.8rem;
             font-weight: 600;
-            margin-bottom: 1rem;
-            border: 1px solid rgba(157, 0, 255, 0.3);
+            color: var(--purple-light);
+            margin-bottom: 1.5rem;
+            backdrop-filter: blur(10px);
         }
 
-        .back-link {
-            display: inline-block;
-            margin-top: 2rem;
-            color: #9D00FF;
-            text-decoration: none;
-            font-weight: 600;
-            transition: color 0.2s ease;
-        }
-
-        .back-link:hover {
-            color: #b233ff;
-            text-decoration: underline;
-        }
-
-        .nav-header {
-            padding: 2rem 40px;
-            max-width: 1200px;
+        .changelog-cards {
+            max-width: 800px;
             margin: 0 auto;
+            padding: 3rem 2rem 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
         }
 
-        .feature-highlight {
-            color: #00e5ff;
+        .changelog-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 2.5rem;
+            transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+        }
+
+        .changelog-card::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 1.5rem;
+            bottom: 1.5rem;
+            width: 3px;
+            background: var(--purple);
+            border-radius: 2px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .changelog-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--border-hover);
+            background: var(--surface-hover);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+        }
+
+        .changelog-card:hover::before {
+            opacity: 1;
+        }
+
+        .changelog-card h2 {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 0.75rem;
+        }
+
+        .changelog-card p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.7;
+            margin-bottom: 1.25rem;
+        }
+
+        .changelog-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .changelog-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .changelog-list li {
+            position: relative;
+            padding-left: 1.5rem;
+            color: #c0c0c0;
+            margin-bottom: 0.6rem;
+            font-size: 0.92rem;
+            line-height: 1.6;
+        }
+
+        .changelog-list li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0.6rem;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--purple);
+        }
+
+        .past-versions-link {
+            display: flex;
+            justify-content: center;
+            padding: 1rem 2rem 4rem;
+        }
+
+        .past-versions-link a {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.75rem;
+            background: transparent;
+            border: 1px solid rgba(157, 0, 255, 0.3);
+            border-radius: 100px;
+            color: var(--purple-light);
             font-weight: 600;
+            font-size: 0.9rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .past-versions-link a:hover {
+            background: rgba(157, 0, 255, 0.08);
+            border-color: var(--purple);
+            transform: translateY(-2px);
+            box-shadow: 0 0 20px var(--purple-glow);
+        }
+
+        @media (max-width: 768px) {
+            .changelog-hero { padding: 4rem 1.5rem 1rem; }
+            .changelog-hero h1 { font-size: 2.2rem; }
+            .changelog-cards { padding: 2rem 1.5rem; }
+            .changelog-card { padding: 1.75rem; }
         }
     </style>
 </head>
 
 <body>
-    <header class="nav-header">
-        <a href="./" class="back-link">&larr; Back to Home</a>
-    </header>
-
-    <div class="doc-hero">
-        <span class="version-badge">Version 1.0</span>
-        <h1 class="doc-title">What's New</h1>
-        <p class="section-subtitle" style="margin-bottom: 0;">Release notes and quick start guide for PowerX Keys.</p>
+    <!-- Ambient Background Glow -->
+    <div class="ambient-glow">
+        <div class="glow-orb glow-orb-1"></div>
+        <div class="glow-orb glow-orb-2"></div>
+        <div class="glow-orb glow-orb-3"></div>
     </div>
 
-    <!-- Quick Start Guide -->
-    <div class="doc-content-section" style="margin-top: 2rem;">
-        <h2 style="color: #fff;">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#9D00FF" stroke-width="2"
-                stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="12" cy="12" r="10"></circle>
-                <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
-                <line x1="12" y1="17" x2="12.01" y2="17"></line>
+    <a href="#main-content" class="skip-to-content">Skip to content</a>
+
+    <!-- Navigation -->
+    <nav class="top-nav">
+        <a href="index.html" class="nav-brand">PowerX <span>Keys</span></a>
+        <div class="nav-links" id="mainNavLinks">
+            <a href="index.html" class="nav-item">Home</a>
+            <a href="whatsnew.html" class="nav-item active">What's New</a>
+            <a href="compare.html" class="nav-item">Compare</a>
+            <a href="guide.html" class="nav-item">Master Guide</a>
+            <a href="faq.html" class="nav-item">FAQ</a>
+            <a href="about.html" class="nav-item">Behind the Keys</a>
+        </div>
+        <button class="hamburger-btn" id="hamburgerBtn" onclick="const nav = document.getElementById('mainNavLinks'); nav.classList.toggle('open'); this.setAttribute('aria-expanded', nav.classList.contains('open'));" aria-label="Toggle navigation menu" aria-expanded="false">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+    </nav>
+
+    <main id="main-content">
+
+    <!-- Hero -->
+    <div class="changelog-hero anim">
+        <div class="version-badge">v5.3.0</div>
+        <h1>What's New</h1>
+        <p>Zero input lag, mobile remote control, sleek visual timelines, and a completely redesigned macro block architecture.</p>
+    </div>
+
+    <!-- Changelog Cards -->
+    <div class="changelog-cards">
+        <div class="changelog-card anim" style="--delay: 0.05s">
+            <h2>Remote Mouse/Keyboard &amp; Mobile Soundboard</h2>
+            <p>The Mobile Remote is now a fully featured wireless control station. Take command of your PC straight from your phone with real-time screen feeds and customized action buttons.</p>
+            <ul class="changelog-list">
+                <li>Real-time trackpad gestures including double-tap-to-drag and two-finger vertical scrolling.</li>
+                <li>Custom mobile soundboard syncing (WAV/MP3 audio up to 5MB, customizable grid cards).</li>
+                <li>PIN code protection, sound alerts when devices connect, and secure internet connections.</li>
+            </ul>
+        </div>
+
+        <div class="changelog-card anim" style="--delay: 0.1s">
+            <h2>Sleek Timeline &amp; Inline Editing</h2>
+            <p>The Macro Timeline has been completely redesigned with a gorgeous, dark aesthetic that minimizes clutter with a cleaner, more consistent design.</p>
+            <ul class="changelog-list">
+                <li>Rename any step by simply double-clicking it in the timeline.</li>
+                <li>Cleaner input fields and file-picker buttons that appear when you hover.</li>
+                <li>Reorder steps with Ctrl+Up/Down and drag to select multiple steps at once.</li>
+            </ul>
+        </div>
+
+        <div class="changelog-card anim" style="--delay: 0.15s">
+            <h2>Smart View Optimization &amp; Delay Merging</h2>
+            <p>Recorded macros are now automatically cleaned up for maximum readability without erasing raw data.</p>
+            <ul class="changelog-list">
+                <li>Combines back-to-back pauses and typing into simpler steps.</li>
+                <li>Groups keyboard shortcuts (like Ctrl+C) into single readable steps.</li>
+                <li>The original recording is always kept in Raw View for advanced users who need exact timing.</li>
+            </ul>
+        </div>
+
+        <div class="changelog-card anim" style="--delay: 0.2s">
+            <h2>Call Macro (Sub-Macros)</h2>
+            <p>Organize complex automations by linking your macros together. One macro can now call and run another macro, turning your library into a modular toolkit.</p>
+            <ul class="changelog-list">
+                <li>Chain macros together so a single hotkey triggers an entire multi-step workflow.</li>
+                <li>Reuse common routines (like a login sequence) across multiple macros without duplicating steps.</li>
+                <li>Built-in safety limits automatically prevent infinite loops if macros accidentally call each other.</li>
+            </ul>
+        </div>
+
+        <div class="changelog-card anim" style="--delay: 0.25s; border-color: rgba(157, 0, 255, 0.2); background: linear-gradient(135deg, rgba(157, 0, 255, 0.02), rgba(6, 6, 10, 0.2));">
+            <h2 style="display: flex; align-items: center; gap: 0.75rem;">
+                What's Next? <span style="font-size: 0.8rem; font-weight: 800; background: rgba(157, 0, 255, 0.1); color: var(--purple-light); padding: 0.25rem 0.6rem; border-radius: 6px;">ROADMAP</span>
+            </h2>
+            <p>We are currently designing and building deep, native integration profiles to let you automate operating systems and professional software directly:</p>
+            <ul class="changelog-list">
+                <li><strong>System Automation:</strong> Native Windows-level window tiling and desktop environment control.</li>
+                <li><strong>Excel Automation:</strong> Pro-grade data entry, cell formatting, and spreadsheet automation templates.</li>
+                <li><strong>Chrome Automation Suite:</strong> Advanced tab management, browser automation, and productivity hooks.</li>
+                <li><strong>Creative Profiles:</strong> Dedicated timeline control scripts for Adobe Premiere Pro and CapCut Pro.</li>
+            </ul>
+        </div>
+
+    <!-- Past Versions Link -->
+    <div class="past-versions-link anim">
+        <a href="guide.html#history">
+            View Full Version History
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M5 12h14"></path>
+                <path d="m12 5 7 7-7 7"></path>
             </svg>
-            Quick Start Guide
-        </h2>
-        <p>Getting started is incredibly simple:</p>
-        <ol style="margin-top: 1rem; padding-left: 1.5rem; color: #a0a0a0;">
-            <li style="margin-bottom: 0.75rem;">Launch <code>PowerX Keys.exe</code>.</li>
-            <li style="margin-bottom: 0.75rem;">Navigate to the <strong>Manage</strong> tab on the left sidebar.</li>
-            <li style="margin-bottom: 0.75rem;">Click on any existing hotkey card, or use the menu to add a new
-                customized shortcut.</li>
-            <li style="margin-bottom: 0.75rem;">Ensure the master toggle in the top-left is green and says "ACTIVE".
-            </li>
-        </ol>
+        </a>
     </div>
 
-    <div class="doc-content-section">
-        <h2>
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#9D00FF" stroke-width="2"
-                stroke-linecap="round" stroke-linejoin="round">
-                <path d="M12 20v-6M6 20V10M18 20V4"></path>
-            </svg>
-            What's New in Version 1.0
-        </h2>
-        <p>
-            Welcome to the first official release of PowerX Keys! This application was built from the ground up to
-            provide the fastest, most reliable hotkey automation experience for Windows professionals.
-        </p>
-
-        <h3>Core Engine & Performance</h3>
-        <ul>
-            <li><span class="feature-highlight">Zero Delay Execution:</span> Custom native engine integration ensures
-                key presses are registered and executed at the hardware level instantly.</li>
-            <li><span class="feature-highlight">Standalone Executable:</span> Fully packaged into a single lightweight
-                <code>.exe</code> file for immediate use.
-            </li>
-            <li><span class="feature-highlight">Memory Optimized:</span> Background engine uses virtually zero CPU and
-                minimal RAM, even with complex setups.</li>
-        </ul>
-
-        <h3>Application Management</h3>
-        <ul>
-            <li><span class="feature-highlight">Per Browser Filters:</span> Map hotkeys to trigger selectively across
-                Chrome, Edge, Brave, and Firefox.</li>
-            <li><span class="feature-highlight">Global Overrides:</span> Choose whether a hotkey runs everywhere or only
-                in specific applications.</li>
-            <li><span class="feature-highlight">Portable Configuration:</span> Settings are automatically isolated to
-                the AppData layer for permanent persistence.</li>
-        </ul>
-
-        <h3>Professional Features</h3>
-        <ul>
-            <li><span class="feature-highlight">High Performance Media Controls:</span> Native system commands for
-                Volume (Esc + Up/Down) and advanced playback.</li>
-            <li><span class="feature-highlight">Smart Tab Switching:</span> Optimized browser tab switching logic for
-                maximum navigation speed.</li>
-            <li><span class="feature-highlight">Instant Capture UI:</span> Assign keys by physically pressing them in
-                the dashboard. No manual entry required.</li>
-        </ul>
-    </div>
+    </main>
 
     <!-- Footer -->
     <footer class="site-footer">
-        <div class="footer-content">
-            <span class="footer-app-name">PowerX Keys</span>
-            <span class="footer-version">v1.0</span>
+        <div style="display: flex; align-items: center; gap: 0.75rem;">
+            <span class="footer-brand">PowerX <span>Keys</span></span>
+            <span class="footer-version">v5.3.0</span>
         </div>
         <div class="footer-links">
-            <a href="/support" class="footer-link">About & Donate</a>
-            <span style="color: #444; margin: 0 0.5rem;">•</span>
-            <a href="https://github.com/maazvfx/PowerXKeys" class="footer-link" target="_blank">GitHub Repository</a>
+            <a href="about.html">Behind the Keys</a>
+            <a href="guide.html">Master Guide</a>
+            <a href="whatsnew.html">What's New</a>
+            <a href="compare.html">Compare</a>
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="faq.html">FAQ</a>
+            <a href="report.html">Report a Bug</a>
         </div>
-        <div class="footer-copyright">
-            &copy; 2026 PowerX Keys. All rights reserved. Built for Windows 10/11.
-        </div>
+        <div class="footer-copy">&copy; 2026 PowerX Keys. All rights reserved. Built for Windows 10/11.</div>
     </footer>
+
+    <!-- Scripts -->
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.12 });
+
+        document.querySelectorAll('.anim').forEach(el => observer.observe(el));
+    </script>
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTopBtn" onclick="scrollToTop()" aria-label="Back to Top">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="18 15 12 9 6 15"></polyline>
+        </svg>
+    </button>
+    <script>
+        const bttBtn = document.getElementById('backToTopBtn');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                bttBtn.classList.add('visible');
+            } else {
+                bttBtn.classList.remove('visible');
+            }
+        });
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+    <!-- Cookie Consent -->
+    <div class="cookie-banner" id="cookieBanner">
+        <p>This site uses basic cookies for functionality. No tracking. <a href="privacy.html">Privacy Policy</a></p>
+        <button class="cookie-btn" onclick="document.getElementById('cookieBanner').classList.remove('visible');localStorage.setItem('cookieOk','1')">Got it</button>
+    </div>
+    <script>if(!localStorage.getItem('cookieOk')){setTimeout(function(){document.getElementById('cookieBanner').classList.add('visible')},1500)}</script>
+  <script defer src="/_vercel/insights/script.js"></script>
+  <script defer src="/_vercel/speed-insights/script.js"></script>
 </body>
 
 </html>
